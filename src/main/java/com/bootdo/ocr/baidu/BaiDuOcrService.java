@@ -18,6 +18,7 @@ public class BaiDuOcrService extends OcrService<BaiduOcrResult> {
     public BaiDuOcrService(String apiKey, String secretKey, String appId) {
         init(apiKey, secretKey, appId);
     }
+
     /**
      * 初始化参数
      * @param apiKey
