@@ -7,7 +7,7 @@
 	<groupId>com.zkturing</groupId>
 	<artifactId>ocrbase</artifactId>
 	<version>1.6.9</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>ocrbase</name>
 	<description>Spring Boot Project</description>
@@ -143,13 +143,6 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 	<repositories>
