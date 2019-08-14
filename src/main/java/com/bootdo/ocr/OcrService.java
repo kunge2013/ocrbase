@@ -12,7 +12,7 @@ import java.util.Map;
 
 import static org.apache.commons.io.FileUtils.*;
 
-public abstract class OcrService<F extends T, T> implements IOcrService {
+public abstract class OcrService<F extends OcrBaseResult> implements IOcrService {
 
     protected  Logger logger = null;
 
@@ -93,12 +93,13 @@ public abstract class OcrService<F extends T, T> implements IOcrService {
         return list;
     }
 
-    protected void cpFileByPath(String source, String format, String newFileName, String temp) throws IOException {
+    protected String cpFileByPath(String source, String format, String newFileName, String temp) throws IOException {
         File file = new File(source);
         final String fileName = file.getName();
         String newFilePath = source.replaceAll(fileName, temp + File.separator + File.separator + newFileName + "." + format);
         System.out.println("source : " + source + ", desc :" + newFilePath);
         copyFile(new File(source), new File(newFilePath));
+        return newFilePath;
     }
 
     protected  static <F> F tranJsonBean(String str,  Class<F> t) {
